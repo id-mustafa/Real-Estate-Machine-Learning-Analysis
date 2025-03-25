@@ -1,0 +1,15 @@
+# Reverse Proxy from Caddy to development servers
+#
+# Port: Service
+# =============
+# 2000: Caddy
+# 2001: React (Vite)
+# 2002: FastAPI
+
+http://localhost:2000 {
+	reverse_proxy /api* http://localhost:2002
+	reverse_proxy /docs http://localhost:2002
+	reverse_proxy /docs/* http://localhost:2002
+	reverse_proxy /openapi.json http://localhost:2002
+	reverse_proxy * http://localhost:2001
+}
