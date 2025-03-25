@@ -1,0 +1,48 @@
+{
+    "name": "Real Estate Machine Learning Analysis",
+    "remoteUser": "vscode",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "forwardPorts": [2000, 2001, 2002],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "matthewpi.caddyfile-support",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "qwtel.sqlite-viewer",
+                "bradlc.vscode-tailwindcss"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.formatOnSaveMode": "file",
+                "[typescript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter"
+                },
+                "[html]": {
+                    "editor.formatOnSave": false
+                },
+                "python.analysis.extraPaths": [
+                    "/backend/"
+                ],
+                "python.testing.pytestEnabled": true,
+                "python.testing.pytestArgs": [
+                    "--ignore=es_files",
+                    "."
+                ],
+                "python.testing.unittestEnabled": false
+            }
+        }
+    }
+}
