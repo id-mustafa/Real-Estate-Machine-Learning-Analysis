@@ -12,7 +12,7 @@ from .services.exceptions import (
     ResourceNotAllowedException,
 )
 
-from .api import static_files, count
+from .api import static_files, test
 
 __authors__ = ["Mustafa Aljumayli"]
 
@@ -24,7 +24,7 @@ app = FastAPI(
     title="Real Estate Machine Learning Analysis API",
     version="1.0.0",
     description=description,
-    openapi_tags=[count.openapi_tags],
+    openapi_tags=[test.openapi_tags],
 )
 
 
@@ -39,7 +39,7 @@ app.add_middleware(
 
 
 # ! Plug in each separate API file here (make sure to import above)
-feature_apis = [count]
+feature_apis = [test]
 
 for feature_api in feature_apis:
     app.include_router(feature_api.api)

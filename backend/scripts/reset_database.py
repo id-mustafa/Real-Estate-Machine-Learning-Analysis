@@ -5,7 +5,7 @@ from sqlmodel import SQLModel, Session
 from ..models import *
 from ..db import engine
 
-from ..test.fake_data import count
+from ..test.fake_data import test
 
 __authors__ = ["Mustafa Aljumayli"]
 
@@ -16,7 +16,7 @@ SQLModel.metadata.drop_all(engine)
 SQLModel.metadata.create_all(engine)
 
 with Session(engine) as session:
-    count.insert_fake_data(
+    test.insert_fake_data(
         session
     )  # Add fake data scripts to have them be inserted on database reset
     session.commit()

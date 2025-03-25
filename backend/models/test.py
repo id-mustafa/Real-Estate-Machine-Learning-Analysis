@@ -5,7 +5,7 @@ from sqlmodel import Field, SQLModel
 __authors__ = ["Mustafa Aljumayli"]
 
 
-class Count(
+class Test(
     SQLModel, table=True
 ):  # The table argument here tells SQLModel to implement this as a table
     id: int | None = Field(default=None, primary_key=True)
