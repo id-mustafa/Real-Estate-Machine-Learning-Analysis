@@ -7,9 +7,9 @@ from ...models.count import Count
 
 __authors__ = ["Mustafa Aljumayli"]
 
-counter1 = Count(title="Assignments Missed")
-counter2 = Count(title="Amount of dependencies changed", count=3)
-counter3 = Count(title="Water Bottles Consumed Today")
+counter1 = Count(title="Does the supabase DB work?")
+counter2 = Count(title="Does the API work?", count=3)
+counter3 = Count(title="Does CRUD work?")
 
 
 def insert_fake_data(session: Session):
