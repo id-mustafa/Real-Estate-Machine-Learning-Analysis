@@ -12,8 +12,19 @@ You can run this ipynb to see how the datasets were modified and combined into o
 
 4) Rename the dataset according to the mapping listed below. 
 
-### Renaming the CSV files to the correct usage in the scripts.
+### Rename the CSV files with the names below.
 
 - (citytemperatures.csv)[https://www.kaggle.com/datasets/thedevastator/record-high-temperatures-for-us-cities-in-2015]
+    - Installs only one dataset.
 
-- ()[]
+- (housingdata1.csv)[https://www.kaggle.com/datasets/febinphilips/us-house-listings-2023?select=original_extracted_df.csv]
+    - Drag and drop the "cleaned_df.csv" version
+
+- (housingdata2.csv)[https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset]
+    - Drag and drop the "r"ealtor-data.zip.csv"
+
+- (qolcitydata.csv)[https://www.kaggle.com/datasets/zacvaughan/cityzipcountyfips-quality-of-life]
+    - Only grab the county level.
+
+- (meancityincome.csv)[]
+    - Unmarked, not sure where to get this one from.
