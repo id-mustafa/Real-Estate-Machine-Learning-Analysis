@@ -28,3 +28,6 @@ You can run this ipynb to see how the datasets were modified and combined into o
 
 - (meancityincome.csv)[]
     - Unmarked, not sure where to get this one from.
+
+- (averagestatetemperatures.csv)[]
+    - Unmarked, not sure where to get this one from.
