@@ -60,8 +60,8 @@ RUN python3 -m ensurepip
 RUN python3 -m pip install --upgrade setuptools
 
 # Install Database Dependencies
-COPY backend/requirements.txt /workspaces/SOTestingEnv/backend/requirements.txt
-WORKDIR /workspaces/SOTestingEnv/backend
+COPY backend/requirements.txt /workspaces/Real-Estate-Machine-Learning-Analysis/backend/requirements.txt
+WORKDIR /workspaces/Real-Estate-Machine-Learning-Analysis/backend
 RUN python3 -m pip install -r requirements.txt
 
 
@@ -79,7 +79,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # Set code to default git commit editor
 RUN git config --system core.editor "code --wait"
 # Set Safe Directory
-RUN git config --system safe.directory '/workspaces/SOTestingEnv'
+RUN git config --system safe.directory '/workspaces/Real-Estate-Machine-Learning-Analysis'
 
 # Configure zsh
 USER $USERNAME
