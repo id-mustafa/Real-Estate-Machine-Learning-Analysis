@@ -1,0 +1,4 @@
+DATABASE_URL=postgresql://postgres.lgcrogvgnqphznuwdopu:COMP562@aws-0-us-east-1.pooler.supabase.com:5432/postgres
+SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmeHBpb3Fnd2NramZ2dmdianVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI4NzgzNTMsImV4cCI6MjA1ODQ1NDM1M30.fGpid748nDlBMryUCbgNuGeT1MUDRqaF-ImJ6qT9q3g
+SUPABASE_URL=https://pfxpioqgwckjfvvgbjue.supabase.co
+DATABASE_PASS=COMP562DB
