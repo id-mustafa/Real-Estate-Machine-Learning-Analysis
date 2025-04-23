@@ -12,7 +12,6 @@ db_url = os.getenv("DATABASE_URL")
 # Set echo=True only in development
 engine = create_engine(db_url, echo=True)  # You can set echo=False in prod
 
-
 def db_session():
     """Generator function to add dependency injection of SQLModel Sessions"""
     session = Session(engine)
