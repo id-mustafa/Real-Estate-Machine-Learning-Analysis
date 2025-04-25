@@ -1,11 +1,11 @@
-from typing import Literal
+from typing import Literal, Optional
 from sqlmodel import SQLModel
 import pandas as pd
 
 class UserInput(SQLModel, table=False):
-    desired_home_price: int
-    income: int
-    bedroom: int
-    bathroom: int
-    area: int
-    population: Literal['small', 'medium', 'large'] = None
+    desired_home_price: Optional[int]
+    income: Optional[int]
+    bedroom: Optional[int]
+    bathroom: Optional[int]
+    area: Optional[int]
+    population: Optional[Literal['small', 'medium', 'large']] = None

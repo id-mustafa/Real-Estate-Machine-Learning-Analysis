@@ -25,5 +25,5 @@ class HousingData2(SQLModel, table=True, extend_existing=True):
     aqi_good: Optional[float] = Field(sa_column=Column("AQI%Good", Float))
     water_quality_vpv: Optional[float] = Field(sa_column=Column("WaterQualityVPV", Float))
     cost_of_living: Optional[float] = Field(sa_column=Column("Cost of Living", Float))
-    median_income_2022: Optional[float] = Field(sa_column=Column("2022 Median Income",Float))
+    median_income: Optional[float] = Field(sa_column=Column("2022 Median Income",Float))
     population: Optional[float] = Field(sa_column=Column("Population", Float))

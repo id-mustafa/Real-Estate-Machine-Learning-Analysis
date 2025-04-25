@@ -2,7 +2,9 @@
 from sqlmodel import SQLModel, create_engine, Session, select
 import pandas as pd
 from models.housingdata import HousingData2
+from models.user_input import UserInput
 from models.house import House
+from typing import Dict
 
 class HouseService:
     """_summary_
@@ -42,3 +44,31 @@ class HouseService:
         labeled 'small', 'medium', 'large' based on its distribution.
         """
         return pd.qcut(s, q=3, labels=['small','medium','large'])
+    
+    @staticmethod
+    def fill_user_defaults(
+            df: pd.DataFrame,
+            u:  UserInput,
+            mapping: Dict[str, str]
+    ) -> UserInput:
+        """
+        For each attribute in `mapping`:
+        • if the user provided a value → keep it
+        • if it's empty / None / ""  → fill from df
+            · numeric   → column median
+            · categorical → column mode
+        Returns the *same* UserInput instance with any gaps filled.
+        """
+        for ui_attr, col in mapping.items():
+            val = getattr(u, ui_attr)
+
+            if val in (None, "", []):
+                # choose median for numeric, mode for categorical
+                if pd.api.types.is_numeric_dtype(df[col]):
+                    default_val = df[col].median(skipna=True)
+                    if pd.isna(default_val):
+                        default_val = 0
+                else:
+                    default_val = df[col].mode(dropna=True).iat[0]
+                setattr(u, ui_attr, default_val)
+        return u
